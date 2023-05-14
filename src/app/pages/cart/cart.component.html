@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="center-all mb-6">
+ <h2 class="my-4">Your cart total is {{ totalCart | currency }}</h2>
+ <p class="text-600 mt-0 mb-4">FREE SHIPPING AND RETURN</p>
+</div>
+<div class="container mt-3">
+ <div class="row">
+  <div class="col-12 col-md-6" *ngFor="let item of cart.items">
+   <div class="item-container my-2">
+    <div class="item">
+     <div class="photo">
+      <p-image [src]="item.food.imageUrl" alt="Image" [preview]="true"></p-image>
+     </div>
+     <div class="description">
+      <span class="name">{{ item.food.name }}</span>
+      <div class="cook-time">
+       <span class="time">
+        <fa-icon [icon]="timeIcon"></fa-icon>
+        {{ item.food.cookTime }}
+       </span>
+      </div>
+      <span class="price">${{ item.price }}</span>
+      <span class="quantity">
+       <p-inputNumber
+        [(ngModel)]="item.quantity"
+        (ngModelChange)="changeQuantity(item.food.id, $event)"
+        mode="decimal"
+        [showButtons]="true"
+        inputId="minmax-buttons"
+        [min]="1"
+        [max]="100"
+       >
+       </p-inputNumber>
+      </span>
+     </div>
+     <div class="float-end">
+      <p-button (click)="removeItem(item.food.id)" icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn"></p-button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="col-12 mt-2">
+   <button class="order" (click)="submitOrder()"><span>ORDER</span></button>
+  </div>
+ </div>
+</div>

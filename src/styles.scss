@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+@import '~bootstrap/dist/css/bootstrap.css';
+/*----- Root color -----*/
+// $light_x: #F5F5F5;
+// $light_y: aliceblue;
+// $light_z: #e5e9ea;
+
+// $pure_black: #000;
+// $light_black: #333;
+
+// $var_1: #f8d095;
+// $var_2: #e19f49;
+// $var_3: #8d4821;
+// $var_4: #452a19;
+
+* {
+ box-sizing: border-box;
+}
+
+html {
+ font-size: 1rem;
+}
+
+html,
+button {
+ font-family: 'Roboto', 'sans-serif';
+}
+
+body {
+ margin: 0;
+ background-color: #f5f5f5;
+}
+
+p,
+a {
+ font-family: 'Lato';
+}
+
+a {
+ text-decoration: none !important;
+ font-weight: 500;
+}
+
+h1 {
+ font-size: calc(1.4rem + 2vw) !important;
+}
+h2 {
+ font-size: calc(1.35rem + 1.3vw) !important;
+}
+h3 {
+ font-size: calc(1.3rem + 0.5vw) !important;
+}
+h5 {
+ font-size: calc(0.7rem + 1vw) !important;
+}
+p {
+ font-size: calc(0.7rem + 0.5vw);
+}
+
+.center-all {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+}
+.center-box {
+ display: flex !important;
+ align-items: center;
+ justify-content: center;
+}
+.center-line {
+ display: flex !important;
+ justify-content: center;
+}

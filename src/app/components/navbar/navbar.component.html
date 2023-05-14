@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-lg gradient-nav px-5">
+    <div class="container-fluid">
+        <img src="favicon.ico" alt="" width="30px" height="30px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/menu">Menu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Testing
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/food-detail/1">Food Detail</a></li>
+                        <li><a class="dropdown-item" href="/order">Order</a></li>
+                        <li><a class="dropdown-item" href="/order-confirm">Order Confirm</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#about">About</a></li>
+                        <li><a class="dropdown-item" href="/home#contact">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{username}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/profile"><i class="pi pi-id-card"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="/setting"><i class="pi pi-cog"></i> Setting</a></li>
+                        <li><a class="dropdown-item" (click)="logout()" ><i class="pi pi-sign-out"></i> Log out</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart"><i class="pi pi-shopping-cart" pBadge [value]="quantity"
+                            severity="warning" style="font-size: 1.3rem;"></i></a>
+                </li>
+            </ul>
+        </div> -->
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/home">Home</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link active" href="/menu">Menu</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link active" href="/order-confirm">Order</a>
+             </li>
+             <li class="nav-item dropdown">
+              <a
+               class="nav-link dropdown-toggle"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false"
+              >
+               More
+              </a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="#about">About</a></li>
+               <li><a class="dropdown-item" href="/home#contact">Contact</a></li>
+              </ul>
+             </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+             <li class="nav-item dropdown">
+              <a
+               class="nav-link dropdown-toggle"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false"
+              >
+              {{username}}
+              </a>
+              <ul class="dropdown-menu">
+               <li>
+                <a class="dropdown-item" href="/profile"><i class="pi pi-id-card"></i> Profile</a>
+               </li>
+               <li>
+                <a class="dropdown-item" href="/setting"><i class="pi pi-cog"></i> Setting</a>
+               </li>
+               <li>
+                <a class="dropdown-item" (click)="logout()"><i class="pi pi-sign-out"></i> Log out</a>
+               </li>
+              </ul>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/cart"
+               ><i
+                class="pi pi-shopping-cart"
+                pBadge
+                [value]="quantity"
+                severity="warning"
+                style="font-size: 1.3rem"
+               ></i
+              ></a>
+             </li>
+            </ul>
+           </div>
+    </div>
+</nav>

@@ -1,0 +1,83 @@
+<div class="container-fluid center-all screen-bg">
+    <!-- For Login Heading -->
+    <div class="register-container">
+        <div class="text-center">
+            <h2>Registering</h2>
+        </div>
+
+        <form class="center-all gap-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 my-2">
+                <span class="p-float-label">
+                    <input type="text" pInputText id="name" formControlName="name">
+                    <label for="name">User Name</label>
+                </span>
+
+                <div *ngIf="submitted && registerForm.controls['name'].errors" class="text-danger">
+                    <div *ngIf="registerForm.controls['name'].errors['required']">
+                        User Name is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 my-2">
+                <span class="p-float-label">
+                    <input id="email" type="email" pInputText formControlName="email" />
+                    <label for="email">Enter Email</label>
+                </span>
+
+                <div *ngIf="submitted && registerForm.controls['email'].errors" class="text-danger">
+                    <div *ngIf="registerForm.controls['email'].errors['required']">
+                        Email is required.
+                    </div>
+                    <div *ngIf="registerForm.controls['email'].errors['email']">
+                        Invalid email format.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 my-2">
+                <span class="p-float-label">
+                    <p-password id="pass" [toggleMask]="true" formControlName="password"></p-password>
+                    <label for="pass">Password</label>
+                </span>
+
+                <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
+                    <div *ngIf="registerForm.controls['password'].errors['required']">
+                        Password is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 my-2">
+                <span class="p-float-label">
+                    <input type="password" pInputText id="comfirmPass" formControlName="confirmPassword">
+                    <label for="comfirmPass">Comfirm Password</label>
+                </span>
+                <div *ngIf="submitted && registerForm.controls['confirmPassword'].errors" class="text-danger">
+                    <div *ngIf="registerForm.controls['confirmPassword'].errors['required']">
+                        This field is required.
+                    </div>
+                    <div *ngIf="registerForm.controls['confirmPassword'].errors['notSame']">
+                        Comfirm Password is unmatched.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 my-2">
+                <span class="p-float-label">
+                    <input type="text" pInputText id="address" formControlName="address">
+                    <label for="address">Your Address</label>
+                </span>
+
+                <div *ngIf="submitted && registerForm.controls['address'].errors" class="text-danger">
+                    <div *ngIf="registerForm.controls['address'].errors['required']">
+                        Address is required.
+                    </div>
+                </div>
+            </div>
+
+            <a routerLink='/login'> Return to login? </a>
+            <p-button label="Register" type="submit" styleClass="p-button-success"></p-button>
+        </form>
+    </div>
+</div>

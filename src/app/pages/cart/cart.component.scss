@@ -1,0 +1,156 @@
+$backgroundColor: #f6f6f6;
+$whiteColor: #ffffff;
+$starColor: #f4bb66;
+$clockColor: #e77eb2;
+$fontColor: #2b2e41;
+$hoverColor: #4b4c53;
+// $fontSize1: clamp(0.75em, 2vw, 1.25em);
+// $fontSize2: clamp(1em, 2vw, 1.5em);
+
+:host {
+  ::ng-deep {
+    #minmax-buttons {
+      width: 70%;
+      height: 100%;
+    }
+
+    .p-inputnumber-button-group {
+      width: 30%;
+      height: 130%;
+    }
+
+    .p-inputnumber-button-up,
+    .p-inputnumber-button-down {
+      width: 100%;
+      background-color: $fontColor;
+      border: none;
+
+      &:hover {
+        background-color: $hoverColor;
+      }
+    }
+
+    .p-inputnumber {
+      width: 80px;
+      height: 20px;
+    }
+
+    .p-image img {
+      object-fit: cover;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: 2px 5px 12px #bbb;
+    }
+
+    .p-image-preview-indicator {
+      border-radius: 10px;
+    }
+
+    .p-image-preview {
+      border-radius: unset !important;
+      box-shadow: unset !important;
+    }
+
+    .del-btn {
+      background-color: aliceblue;
+      color: #333;
+      border: none;
+      box-shadow: 2px 2px 5px rgba($color: #333, $alpha: 0.3);
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+
+.container {
+  max-width: 90vw;
+
+  .item-container {
+    border-radius: 5px;
+    background-color: $backgroundColor;
+    padding: 15px;
+
+    .item {
+      padding: 15px;
+      background-color: $whiteColor;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      .photo {
+        width: 50%;
+      }
+
+      .description {
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+        color: $fontColor;
+        width: 50%;
+
+        .name,
+        .cook-time {
+          height: 20%;
+        }
+
+        .name {
+          font-weight: bold;
+        }
+
+        .cook-time {
+          fa-icon {
+            color: $clockColor;
+          }
+
+          .time {
+            font-size: inherit;
+          }
+        }
+
+        .price {
+          font-weight: 600;
+          height: 25%;
+        }
+
+        .quantity {
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+
+  .order {
+    width: 100%;
+    background-color: $fontColor;
+    color: $whiteColor;
+    font-weight: bold;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s ease-in-out;
+
+    span {
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+      &:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+    }
+
+    &:hover {
+      background-color: $hoverColor;
+      span {
+        padding-right: 1.2rem;
+        &:after {
+          opacity: 1;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,67 @@
+
+.alter {
+ display: inline-block;
+ position: relative;
+ width: 150px;
+ background: #a855f7;
+ padding: 0.7rem 1rem;
+ border-radius: 0.5rem;
+ color: aliceblue;
+ border: none;
+ font-weight: bold;
+ vertical-align: middle;
+ overflow: hidden;
+ transition: all 0.3s ease-in-out;
+
+ &:hover {
+   background: #6f42c1;
+   span {
+     opacity: 0;
+     transform: scale(0.3);
+   }
+   &:before {
+     opacity: 1;
+     transform: translate(0, 0);
+     transition-delay: 0.4s;
+   }
+ }
+ span {
+   transition: 0.6s;
+   transition-delay: 0.2s;
+ }
+ &:before {
+   content: 'Check Out';
+   position: absolute;
+   top: 0.67rem;
+   left: 0;
+   width: 100%;
+   text-align: center;
+   opacity: 0;
+   transition: 0.4s;
+   transform: translate(-150%, 0);
+ }
+ &:after {
+   position: absolute;
+   top: 0.67rem;
+   left: 0;
+   width: 100%;
+   text-align: center;
+   opacity: 0;
+   transition: 0.4s;
+   transform: translate(150%, 0);
+ }
+ &:active {
+   span {
+     opacity: 0;
+     transform: scale(0.3);
+   }
+   &:after {
+     opacity: 1;
+     transform: translate(0, 0);
+     transition-delay: 0.4s;
+   }
+   &:before {
+     transform: translate(-150%, 0);
+   }
+ }
+}

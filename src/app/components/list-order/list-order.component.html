@@ -1,0 +1,50 @@
+<div class="card p-1">
+ <div class="card-body overflow-y-scroll">
+  <ul class="list-unstyled p-0 pe-sm-1 m-0">
+   <div *ngFor="let item of cart.items; let last = last">
+    <li class="py-3 d-flex align-items-start align-items-sm-center">
+     <img [src]="item.food.imageUrl" width="150" class="rounded-3" />
+     <div class="ps-3 item-detail">
+      <div class="d-flex align-items-center justify-content-between mb-2 fw-semibold">
+       <span>{{ item.food.name }}</span>
+       <span>{{ item.price | currency }}</span>
+      </div>
+      <div class="mb-2"><fa-icon [icon]="clock"></fa-icon> {{ item.food.cookTime }}</div>
+      <div class="d-flex align-items-center justify-content-between">
+       <p-inputNumber
+        [(ngModel)]="item.quantity"
+        mode="decimal"
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        incrementButtonIcon="pi pi-caret-right"
+        decrementButtonIcon="pi pi-caret-left"
+        [min]="1"
+        [max]="100"
+        [disabled]="true"
+       >
+       </p-inputNumber>
+       <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn" (click)="deleteItem(item.food.id)"></p-button>
+      </div>
+     </div>
+    </li>
+    <p-divider *ngIf="!last"></p-divider>
+    <!-- <li class="py-3">
+     <div class="d-flex align-items-center justify-content-between mb-3">
+      <span>Total Amount <span class="text-sm text-600">incl. VAT</span></span
+      ><span class="fw-bold text-900">$60.00</span>
+     </div>
+     <button pbutton="" pripple="" label="Check Out" class="p-element p-ripple p-button-success mb-3 w-full p-button p-component">
+      <span class="p-button-label">Check Out</span><span class="p-ink"></span></button
+     ><button
+      pbutton=""
+      pripple=""
+      label="Continue Shopping"
+      class="p-element p-ripple p-button-outlined p-button-secondary w-full p-button p-component"
+     >
+      <span class="p-button-label">Continue Shopping</span><span class="p-ink"></span>
+     </button>
+    </li> -->
+   </div>
+  </ul>
+ </div>
+</div>

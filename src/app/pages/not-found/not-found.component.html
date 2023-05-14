@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+<div *ngIf="visible" class="center-all mt-3">
+    <h2>{{ mess }}</h2>
+    <p-button label="{{resetLinkText}}" [routerLink]="resetLinkRoute"
+        styleClass="p-button-raised p-button-help"></p-button>
+</div>

@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<!-- <app-not-found [visible]="!food || !food.length" resetLinkText="Search Again!">
+</app-not-found> -->
+
+<div class="container-fluid">
+    <div class="p-3">
+        <app-food-search (event)="search($event)"></app-food-search>
+    </div>
+    <div class="menu-dishes mx-2">
+        <div *ngIf="loading | async; else content" class="row">
+            <div *ngFor="let item of skeletonResult" class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <p-card styleClass="m-2">
+                    <ng-template pTemplate="header">
+                        <p-skeleton width="100%" height="7rem"></p-skeleton>
+                        <div class="title">
+                            <p-skeleton width="70%" height="1.5rem"></p-skeleton>
+                        </div>
+                    </ng-template>
+                    <p-skeleton width="100%" height="1.5rem" styleClass="mt-4"></p-skeleton>
+                    <div class="price">
+                        <p-skeleton width="3rem" height="2rem"></p-skeleton>
+                    </div>
+                    <div class="add-to-cart-skeleton">
+                        <p-skeleton width="3rem" height="3rem"></p-skeleton>
+                    </div>
+                </p-card>
+            </div>
+        </div>
+
+        <ng-template #content>
+            <div *ngIf="foodsResult.length > 0; else notFound" class="row">
+                <p-carousel [value]="foodsResult" [numVisible]="foodsResult.length <= 3 ? 1 : 4" [numScroll]="1" [circular]="true"
+                    [responsiveOptions]="responsiveOptions" autoPlayInterval="3000">
+                    <ng-template let-item pTemplate="item">
+                        <p-card header="{{ item.name }}" styleClass="mx-2 p-0">
+                            <ng-template pTemplate="header">
+                                <img [alt]="item.name" [src]="item.imageUrl" routerLink="/food-detail/{{ item.id }}" />
+                            </ng-template>
+                            <div class="info-food fs-5 fw-semibold justify-content-between">
+                                <div class="star">
+                                    <fa-icon [icon]="starIcon"></fa-icon>
+                                    <span>{{ item.stars }}</span>
+                                </div>
+                                <div class="cook-time">
+                                    <fa-icon [icon]="timeIcon"></fa-icon>
+                                    <span>{{ item.cookTime }}</span>
+                                </div>
+                            </div>
+                            <div class="price">${{ item.price }}</div>
+                            <div class="add-to-cart center-box">
+                                <fa-icon [icon]="cartIcon" (click)="addFoodToCart(item)"></fa-icon>
+                            </div>
+                        </p-card>
+                    </ng-template>
+                </p-carousel>
+            </div>
+
+            <ng-template #notFound>
+                <div class="row">
+                    <h1 class="text-center">Not Found Food</h1>
+                </div>
+            </ng-template>
+        </ng-template>
+    </div>
+</div>

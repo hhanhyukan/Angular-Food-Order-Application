@@ -1,0 +1,43 @@
+:host {
+  .screen-bg {
+    background-image: url("/assets/extra_img/landing-bg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.5; */
+    /* filter: blur(1px); */
+    height: 100vh;
+  }
+
+  .register-container {
+    gap: 2rem;
+    background: linear-gradient(
+      rgba($color: #fff, $alpha: 0.7),
+      rgba($color: lightgrey, $alpha: 0.6)
+    );
+    width: calc(27rem + 8vw);
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px grey;
+
+    ::ng-deep {
+      .p-button {
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 1rem;
+        transition: 0.5s;
+      }
+      .p-button:hover {
+        background-color: green;
+        box-shadow: inset 0 0 2px 2px #73a580;
+        opacity: 0.8;
+      }
+    }
+    ::ng-deep {
+      .p-inputtext,
+      .p-password {
+        color: green;
+        width: 100%;
+      }
+    }
+  }
+}

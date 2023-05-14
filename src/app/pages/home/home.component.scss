@@ -1,0 +1,364 @@
+/*----- Heading -----*/
+#top {
+  background: url("/assets/extra_img/login-bg.jpg") top center;
+  background-size: cover;
+  position: relative;
+  &:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  h1 {
+    font-weight: 700;
+    color: aliceblue;
+    animation: 2s lineUp ease-out;
+  }
+  h2 {
+    color: #e19f49;
+    animation-delay: 0.4s !important;
+    animation: 2s lineUp ease-out;
+    animation-fill-mode: backwards;
+  }
+  .btn-menu,
+  .btn-meal {
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #f8d095;
+    border: 2px solid #e19f49;
+
+    &:hover {
+      background: #e19f49;
+      color: #8d4821;
+    }
+  }
+  .intro-btn {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      rgba(219, 138, 31, 0.9) 48%,
+      rgba(195, 155, 87, 0.4) 50%
+    );
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      transform: translateX(-40%) translateY(-50%);
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 15px solid #e5e9ea;
+      transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      z-index: 10;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15%;
+      left: -15%;
+      width: 7.2rem;
+      height: 7.2rem;
+      opacity: 1;
+      border-radius: 50%;
+      animation-delay: 0s;
+      animation: pulsate-btn 2s ease-out;
+      animation-iteration-count: infinite;
+      border: 5px solid rgba(205, 164, 94, 0.7);
+      background: rgba(198, 16, 0, 0);
+    }
+    &:hover {
+      &::after {
+        border-left: 15px solid #e19f49;
+        transform: scale(20);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 0;
+        transform: translateX(-40%) translateY(-50%);
+        border: none;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 15px solid #f5f5f5;
+        border-radius: 0;
+        z-index: 20;
+        animation: none;
+      }
+    }
+  }
+  .fadeout {
+    color: #e5e9ea;
+    animation-delay: 0s;
+    animation: fadeOut 2s ease-in-out infinite;
+  }
+}
+
+@keyframes lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0.1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.1;
+    color: #333;
+  }
+  50% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #top {
+    background-attachment: fixed;
+  }
+}
+
+/*----- Middle Section -----*/
+h2 {
+  margin-top: 2rem;
+  font-weight: 700;
+  color: #5f5950;
+  span {
+    color: #452a19;
+  }
+}
+
+/*----- >> Mid sec 1 -----*/
+.card {
+  background: linear-gradient(
+    140deg,
+    rgba($color: #f5f5f5, $alpha: 0.6),
+    rgba($color: #fff6e8, $alpha: 0.4)
+  );
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+  border: none;
+
+  span {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #e19f49;
+  }
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  &:hover {
+    background: #f8d095;
+    box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/*----- >> Mid sec 2 -----*/
+#menu {
+  background-color: #fff6e8;
+  .menu-flters {
+    list-style: none;
+    text-align: center;
+    border-radius: 50%;
+    li {
+      display: inline-block;
+      padding: 8px 12px;
+      font-weight: 500;
+      color: #333;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        color: #e19f49;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .menu-img {
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    float: left;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+  }
+  .menu-content {
+    margin-left: 85px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &::after {
+      content: "......................................................................"
+        "...................................................................."
+        "....................................................................";
+      position: absolute;
+      left: 20px;
+      right: 0;
+      top: -4px;
+      z-index: 1;
+    }
+    a {
+      padding-left: 10px;
+      padding-right: 10px;
+      background: #1a1814;
+      position: relative;
+      z-index: 3;
+      font-weight: 700;
+      color: white;
+      transition: 0.3s;
+      &:hover {
+        color: #e19f49;
+      }
+    }
+    span {
+      background: #1a1814;
+      position: relative;
+      z-index: 3;
+      padding: 0 10px;
+      font-weight: 600;
+      color: #e19f49;
+    }
+  }
+  .menu-ingredients {
+    margin-left: 85px;
+    font-style: italic;
+    font-size: 14px;
+  }
+}
+
+/*----- >> Contact -----*/
+section {
+  margin-top: 2rem;
+  .info-wrap {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  .info {
+    i,
+    fa-icon {
+      width: 2.7rem;
+      height: 2.7rem;
+      font-weight: 500;
+      color: #e19f49;
+      background: #fff6e8;
+      float: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: all 0.7s ease-in-out;
+    }
+    i {
+      font-size: 1.25rem;
+    }
+    h4 {
+      padding: 0 0 0 3.7rem;
+      color: #433f39;
+    }
+    p {
+      padding: 0 0 0 3.7rem;
+      margin-bottom: 0;
+      color: #333;
+    }
+    &:hover {
+      i {
+        background: #e19f49;
+        color: aliceblue;
+      }
+    }
+  }
+}
+
+/*----- Footer -----*/
+#footer {
+  background: #333;
+  color: #f5f5f5;
+  font-size: 14px;
+  padding: 30px 0;
+  h3 {
+    font-weight: 700;
+    color: #e19f49;
+  }
+  p {
+    font-style: oblique 10deg;
+  }
+
+  .social-links {
+    a {
+      font-size: 1rem;
+      display: inline-block;
+      background: #452a19;
+      color: aliceblue;
+      padding: 7px;
+      margin: 5px;
+      border-radius: 50%;
+      width: 2.3rem;
+      height: 2.3rem;
+      transition: 0.5s;
+      &:hover {
+        background: #8d4821;
+      }
+    }
+  }
+}
+
+/*----- PrimeNg stuff -----*/
+
+:host {
+  ::ng-deep {
+    .p-scrolltop {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 15%;
+      background: #e19f49;
+      box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        background: #8d4821;
+        border-radius: 50%;
+        color: aliceblue;
+      }
+    }
+  }
+}

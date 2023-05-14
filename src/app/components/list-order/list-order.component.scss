@@ -1,0 +1,46 @@
+:host {
+  ::ng-deep {
+    .p-inputnumber {
+      height: 2.5rem;
+
+      .p-inputnumber-input {
+        width: 3.2rem;
+        text-align: center;
+        color: green;
+        background: aliceblue;
+      }
+      .p-inputnumber-button-down,
+      .p-inputnumber-button-up {
+        border: none;
+        background-color: #90a2b0;
+      }
+    }
+    .p-button {
+      height: 2.5rem !important;
+      width: 2.5rem;
+    }
+
+    .del-btn {
+      background-color: aliceblue;
+      color: crimson;
+      border: none;
+      box-shadow: 2px 2px 5px rgba($color: #333, $alpha: 0.3);
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+
+.card {
+  height: 32.5rem;
+  background: linear-gradient(120deg, #fdfbfb, #f8fbfd);
+  border: 1px solid rgba($color: #000, $alpha: 0.1);
+  box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.1);
+
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
+  
+  .item-detail {
+    flex: 1 1 auto;
+  }
+}

@@ -1,0 +1,160 @@
+<app-navbar></app-navbar>
+<div class="container my-3">
+ <div class="row">
+  <div class="col-lg-4">
+   <div class="card mb-4 bg-card">
+    <div class="card-body text-center">
+     <img
+      src="/assets/extra_img/VIP-Avatar.jpg"
+      alt="avatar"
+      class="rounded-circle img-fluid"
+      style="width: 100px"
+     />
+     <h5 class="my-3">{{userDetail.name}}</h5>
+     <p class="text-muted mb-1">User Authority</p>
+     <p class="text-muted">HCM, VN</p>
+     <div class="center-all">
+      <button type="button" class="btn btn-primary bg-gradient" routerLink="/profile/edit">
+       <fa-icon [icon]="faEdit"></fa-icon> Edit profile
+      </button>
+      <button type="button" class="btn btn-outline-primary mt-2" routerLink="/setting">
+       <fa-icon [icon]="faRef"></fa-icon> Preference
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-lg-8">
+   <div class="card mb-4 bg-card">
+    <div class="card-body">
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mb-0">Full Name</p>
+      </div>
+      <div class="col-sm-9">
+       <p class="text-muted mb-0">{{userDetail.name}}</p>
+      </div>
+     </div>
+     <hr />
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mb-0">Email</p>
+      </div>
+      <div class="col-sm-9">
+       <p class="text-muted mb-0">{{userDetail.email}}</p>
+      </div>
+     </div>
+     <hr />
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mb-0">Phone</p>
+      </div>
+      <div class="col-sm-9">
+       <p class="text-muted mb-0">(012) 345-6789</p>
+      </div>
+     </div>
+     <hr />
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mb-0">Total Spending</p>
+      </div>
+      <div class="col-sm-9">
+       <p class="text-muted mb-0">XXX</p>
+      </div>
+     </div>
+     <hr />
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mb-0">Address</p>
+      </div>
+      <div class="col-sm-9">
+       <p class="text-muted mb-0">{{userDetail.address}}</p>
+      </div>
+     </div>
+     <hr />
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mb-0">VIP</p>
+      </div>
+      <div class="col-sm-9">
+       <p class="text-muted mb-0">N/A</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="col">
+   <div class="card mb-4 mb-lg-0 bg-card">
+    <div class="card-body">
+     <ul class="list-unstyled p-0 m-0">
+      <!-- ngif for this stuff -->
+      <li
+       class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between p-3 mb-3 bg-warning bg-opacity-10 border border-warning text-black-50 rounded-3"
+      >
+       <div>
+        <span class="inline-flex justify-content-center align-items-center">
+         <i class="pi pi-box center-box border rounded-circle border-warning"></i>
+        </span>
+        <span class="fw-bold ms-2">Sakai Shidou</span>
+        <p class="mt-2 mb-0">Due 10/09/2023</p>
+       </div>
+       <div
+        class="d-flex align-items-center justify-content-between justify-content-md-end mt-3 mt-md-0"
+       >
+        <span class="bg-warning bg-opacity-25 fw-bold py-1 px-2 rounded-3">Pending</span>
+        <div class="text-right ms-3">
+         <b>120.00</b>
+         <div>USD</div>
+        </div>
+       </div>
+      </li>
+
+      <li
+       class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between p-3 mb-3 bg-success bg-opacity-10 border border-success text-success rounded-3"
+      >
+       <div>
+        <span class="inline-flex justify-content-center align-items-center">
+         <i class="pi pi-box center-box border rounded-circle border-success"></i>
+        </span>
+        <span class="fw-bold ms-2">Phat Grayy</span>
+        <p class="mt-2 mb-0">Due 21/10/2023</p>
+       </div>
+       <div
+        class="d-flex align-items-center justify-content-between justify-content-md-end mt-3 mt-md-0"
+       >
+        <span class="bg-success bg-opacity-25 fw-bold py-1 px-2 rounded-3">Confirmed</span>
+        <div class="text-right ms-3">
+         <b>82.50</b>
+         <div>USD</div>
+        </div>
+       </div>
+      </li>
+
+      <li
+       class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between p-3 mb-3 bg-danger bg-opacity-10 border border-danger text-danger rounded-3"
+      >
+       <div>
+        <span class="inline-flex justify-content-center align-items-center">
+         <i class="pi pi-box center-box border rounded-circle border-danger"></i>
+        </span>
+        <span class="fw-bold ms-2">FxBite</span>
+        <p class="mt-2 mb-0">Due 01/05/2023</p>
+       </div>
+       <div
+        class="d-flex align-items-center justify-content-between justify-content-md-end mt-3 mt-md-0"
+       >
+        <span class="bg-danger bg-opacity-25 fw-bold py-1 px-2 rounded-3">Rejected</span>
+        <div class="text-right ms-3">
+         <b>60.00</b>
+         <div>USD</div>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <!-- <p-card styleClass="mb-4 mb-lg-0">Order List</p-card> -->
+  </div>
+ </div>
+</div>

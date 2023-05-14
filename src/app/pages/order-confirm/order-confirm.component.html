@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="m-4">
+ <p-table #oc [value]="order" [columns]="cols" [paginator]="true" [rows]="5" [globalFilterFields]="['orderId', 'user', 'status']">
+  <!-- <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(oc)"></button>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="oc.filterGlobal($event.target.value, 'contains')"
+                    placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template> -->
+  <ng-template pTemplate="header" let-columns>
+   <tr>
+        <th>OrderId</th>
+        <th>UserName<p-columnFilter type="text" field="user" display="menu"></p-columnFilter></th>
+        <th>Price</th>
+        <th>Location</th>
+        <th>Status<p-columnFilter type="text" field="status" display="menu"></p-columnFilter></th>
+   </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-order let-columns="order">
+   <tr>
+    <td>{{ order['_id'] }}</td>
+    <td>{{ order['user']['name'] }}</td>
+    <td>{{ order.totalPrice | currency }}</td>
+    <td>{{ order.address }}</td>
+    <td><p-tag [value]="order.status" [severity]="getSeverity(order.status)"></p-tag></td>
+   </tr>
+  </ng-template>
+ </p-table>
+</div>
